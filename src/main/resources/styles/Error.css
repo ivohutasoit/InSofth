@@ -1,0 +1,36 @@
+/* 
+    Created on : Sep 30, 2014, 1:09:27 PM
+    Author     : Hutasoit
+*/
+
+.context-menu {
+  -fx-background-color: #006699;
+  -fx-text-fill: white;
+  -fx-padding: 0;
+}
+
+.context-menu:hover {
+  -fx-background-color: #006699;
+  -fx-text-fill: white;
+}
+
+.menu-item .label {
+  -fx-text-fill: white;
+}
+
+.menu-item:focused .label {
+  -fx-text-fill: white;
+}
+
+.text-field:error {
+  -fx-text-box-border: red ;
+  -fx-focus-color: red ;
+}
+
+.popup {
+    -fx-background-color: red;
+    -fx-padding: 10;
+    -fx-border-color: black; 
+    -fx-border-width: 5;
+    -fx-font-size: 16;
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="ListPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.softhaxi.insofth.controller.ListAccountController">
+    <stylesheets>
+        <URL value="@/styles/Styles.css" />
+    </stylesheets>
+   <children>
+      <ToolBar prefHeight="40.0" prefWidth="200.0">
+        <items>
+          <Button mnemonicParsing="false" text="%new.account" onAction="#handleNewAccount">
+               <graphic>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/ic_plus.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Pane HBox.hgrow="ALWAYS" />
+            <TextField promptText="Search item...">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></TextField>
+        </items>
+      </ToolBar>
+      <TableView fx:id="tblAccount" prefHeight="200.0" VBox.vgrow="ALWAYS">
+         <columns>
+            <TableColumn fx:id="tcId" prefWidth="108.0" text="Account ID" />
+            <TableColumn fx:id="tcName" prefWidth="200.0" resizable="false" text="Name" />
+            <TableColumn fx:id="tcDescription" prefWidth="292.0" resizable="false" text="Description" />
+         </columns>
+      </TableView>
+      <HBox alignment="CENTER_LEFT" prefHeight="40.0" spacing="5.0">
+         <children>
+            <Pane HBox.hgrow="ALWAYS" />
+            <Button fx:id="btnSave" disable="true" mnemonicParsing="false" text="Save" />
+            <Button mnemonicParsing="false" text="Cancel" />
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets right="5.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ToolBar id="footerPane" prefHeight="25.0" style="-fx-background-color: #ff6600;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.softhaxi.insofth.controller.FooterController">
+    <items>
+        <Label fx:id="lblStatus" text="%ready.title" textFill="WHITE" />
+        <Pane HBox.hgrow="ALWAYS" />
+      <ProgressBar fx:id="prgProgress" />
+        <Label fx:id="lblCompany" styleClass="white" textFill="WHITE">
+            <padding>
+                <Insets left="2.0" right="2.0" />
+            </padding>
+        </Label>
+        <Separator orientation="VERTICAL" />
+        <Label fx:id="lblCopyright" styleClass="white" textFill="WHITE">
+            <padding>
+                <Insets left="2.0" right="2.0" />
+            </padding>
+        </Label>
+    </items>
+</ToolBar>

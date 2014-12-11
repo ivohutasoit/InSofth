@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.softhaxi.insofth.dao.FinanceActivity" table="fnacty" catalog="isftdb" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="FNAYAYNO" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="account" class="com.softhaxi.insofth.dao.FinanceAccount" fetch="select">
+            <column name="FNAYACNO" length="6" not-null="true" />
+        </many-to-one>
+        <property name="date" type="int">
+            <column name="FNAYDATE" not-null="true" />
+        </property>
+        <property name="amount" type="float">
+            <column name="FNAYAMNT" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="category" type="java.lang.String">
+            <column name="FNAYCTGY" length="30" />
+        </property>
+        <property name="subCategory" type="java.lang.String">
+            <column name="FNAYSBCY" length="30" />
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="FNAYRMRK" length="65535" />
+        </property>
+        <property name="payMethod" type="java.lang.String">
+            <column name="FNAYPMMD" length="30" />
+        </property>
+        <property name="payeer" type="java.lang.String">
+            <column name="FNAYPAYE" length="30" />
+        </property>
+        <property name="tax" type="float">
+            <column name="FNAYTAXA" precision="12" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

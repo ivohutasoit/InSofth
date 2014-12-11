@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox fx:id="headerPane" prefHeight="65.0" styleClass="headerPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.softhaxi.insofth.controller.HeaderController">
+    <children>
+        <ImageView pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/insofth_logo.png" />
+            </image>
+        </ImageView>
+        <Pane HBox.hgrow="ALWAYS" />
+        <ToolBar prefHeight="65.0" prefWidth="163.0" style="-fx-background-color: transparent;">
+            <items>
+                <MenuButton mnemonicParsing="false" text="%myaccount.title">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="%profile.title">
+                            <accelerator>
+                                <KeyCodeCombination alt="DOWN" code="P" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                            </accelerator>
+                            <graphic>
+                                <ImageView preserveRatio="true" smooth="true">
+                                    <image>
+                                        <Image url="@../images/ic_user.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#handleActivation" text="Activation" visible="false" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="%import.title" />
+                        <MenuItem mnemonicParsing="false" text="%export.title" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="%setting.title">
+                            <accelerator>
+                                <KeyCodeCombination alt="DOWN" code="F2" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                            </accelerator>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" text="%logout.title" />
+                    </items>
+                </MenuButton>
+                <Button mnemonicParsing="false" text="%help.title" />
+            </items>
+        </ToolBar>
+    </children>
+</HBox>

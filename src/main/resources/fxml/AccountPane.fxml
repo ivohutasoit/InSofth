@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AccountPane" prefWidth="699.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.softhaxi.insofth.controller.AccountController">
+    <children>
+        <Label layoutX="15.0" layoutY="14.0" text="%account.type" />
+        <HBox alignment="CENTER_LEFT" layoutX="150.0" layoutY="3.0" prefHeight="31.0" prefWidth="544.0" spacing="15.0">
+
+            <children>
+                <RadioButton fx:id="rdoPersonal" disable="true" mnemonicParsing="false" selected="true" text="%personal.title">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="AccountGroup" />
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="rdoOrg" disable="true" mnemonicParsing="false" text="%org.title" toggleGroup="$AccountGroup" />
+                <RadioButton fx:id="rdoCompany" disable="true" mnemonicParsing="false" text="%company.title" toggleGroup="$AccountGroup" />
+            </children>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </HBox>
+        <Label layoutX="16.0" layoutY="42.0" text="%account.title" />
+        <Label layoutX="16.0" layoutY="71.0" text="%income.balance" />
+        <Separator layoutX="16.0" layoutY="89.0" prefWidth="300.0" />
+        <GridPane layoutX="16.0" layoutY="92.0" prefHeight="140.0" prefWidth="300.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="143.0" minWidth="10.0" prefWidth="115.0" />
+                <ColumnConstraints maxWidth="192.0" minWidth="10.0" prefWidth="185.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="%current.balance" />
+                <Label text="%this.month.balance" GridPane.rowIndex="1" />
+                <Label text="%this.week.income" GridPane.rowIndex="2" />
+                <Label text="%this.month.income" GridPane.rowIndex="3" />
+                <TextField fx:id="txtBalance" alignment="CENTER_RIGHT" editable="false" text="0" GridPane.columnIndex="1" />
+                <TextField fx:id="txtMonthBalance" alignment="CENTER_RIGHT" editable="false" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="txtWeekIncome" alignment="CENTER_RIGHT" editable="false" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="txtMonthIncome" alignment="CENTER_RIGHT" editable="false" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label text="%year.to.date.income" GridPane.rowIndex="4" />
+                <TextField fx:id="txtYTDIncome" alignment="CENTER_RIGHT" editable="false" text="0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            </children>
+        </GridPane>
+        <Label layoutX="394.0" layoutY="69.0" text="%expense.balance" />
+        <Separator layoutX="394.0" layoutY="88.0" prefWidth="300.0" />
+        <GridPane layoutX="394.0" layoutY="92.0" prefHeight="111.0" prefWidth="300.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="123.0" />
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="200.0" minWidth="10.0" prefWidth="177.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="%today.expense" />
+                <Label text="%this.week.expense" GridPane.rowIndex="1" />
+                <Label text="%this.month.expense" GridPane.rowIndex="2" />
+                <Label text="%year.to.date.expense" GridPane.rowIndex="3" />
+                <TextField alignment="CENTER_RIGHT" editable="false" text="0" GridPane.columnIndex="1" />
+                <TextField alignment="CENTER_RIGHT" editable="false" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField alignment="CENTER_RIGHT" editable="false" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField alignment="CENTER_RIGHT" editable="false" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            </children>
+        </GridPane>
+        <Label layoutX="394.0" layoutY="209.0" text="%expense.vs.budget" />
+        <Separator layoutX="394.0" layoutY="228.0" prefWidth="300.0" />
+        <ProgressBar layoutX="394.0" layoutY="237.0" prefHeight="18.0" prefWidth="300.0" progress="0.5" />
+        <Label contentDisplay="RIGHT" layoutX="647.0" layoutY="209.0" text="50/100%" />
+        <PieChart fx:id="chartExpense" layoutX="16.0" layoutY="264.0" prefWidth="674.0" title="Expense by Category" />
+      <HBox alignment="CENTER_LEFT" layoutX="150.0" layoutY="32.0" prefHeight="38.0" prefWidth="428.0">
+         <children>
+            <TextField fx:id="txtAccount" editable="false" prefWidth="250.0">
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </TextField>
+            <Button fx:id="btnSelect" mnemonicParsing="false" onAction="#handleSelect">
+               <graphic>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/ic_search.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+    </children>
+</AnchorPane>
